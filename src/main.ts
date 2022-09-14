@@ -8,6 +8,15 @@ dotenv.config();
 const octokit = new Octokit({
   auth: process.env.TOKEN,
 });
+// console.log(JSON.parse(process.env.ACTIVE_REPO));
+// octokit
+//   .request("GET /repos/{owner}/{repo}/stats/commit_activity", {
+//     owner: process.env.GIT_USERNAME,
+//     repo: "ois",
+//   })
+//   .then((res) => {
+//     console.log(res);
+//   });
 
 octokit
   .request("GET /users/{user}/repos", {
