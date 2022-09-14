@@ -2,84 +2,84 @@
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 24`
   > `issues: 0`
   > `stars: 0`
   >[API](https://github.com/chepuhasasha/API)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 5`
   > `issues: 0`
   > `stars: 0`
   >[ASCII](https://github.com/chepuhasasha/ASCII)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 24`
   > `issues: 0`
   > `stars: 0`
   >[chepuhasasha](https://github.com/chepuhasasha/chepuhasasha)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 6`
   > `issues: 0`
   > `stars: 0`
   >[CLI](https://github.com/chepuhasasha/CLI)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 30`
   > `issues: 0`
   > `stars: 0`
   >[muup](https://github.com/chepuhasasha/muup)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 7`
   > `issues: 0`
   > `stars: 0`
   >[nestjs](https://github.com/chepuhasasha/nestjs)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 30`
   > `issues: 0`
   > `stars: 0`
   >[ois](https://github.com/chepuhasasha/ois)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 30`
   > `issues: 0`
   > `stars: 1`
   >[snowblower](https://github.com/chepuhasasha/snowblower)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 21`
   > `issues: 0`
   > `stars: 0`
   >[v-container](https://github.com/chepuhasasha/v-container)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 30`
   > `issues: 0`
   > `stars: 0`
   >[v-lang](https://github.com/chepuhasasha/v-lang)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 22`
   > `issues: 0`
   > `stars: 0`
   >[v-theme](https://github.com/chepuhasasha/v-theme)
 
 
   >30% █████████│││││││││││││││││││││
-  > `commits: 0`
+  > `commits: 10`
   > `issues: 0`
   > `stars: 0`
   >[vng](https://github.com/chepuhasasha/vng)

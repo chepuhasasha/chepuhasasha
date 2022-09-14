@@ -2,28 +2,30 @@ import * as dotenv from "dotenv";
 import { writeFile } from "node:fs/promises";
 import { Octokit } from "octokit";
 import ReposBlock from "./components/ReposBlock.js";
+import { IRepo } from "./types/repo.interface.js";
 
 dotenv.config();
-
 const octokit = new Octokit({
   auth: process.env.TOKEN,
 });
 
-const getRepos = async () => {
-  try {
-    const repos = await octokit.request("GET /users/{user}/repos", {
-      user: process.env.GIT_USERNAME,
-    });
-    return repos.data.map(
-      (element: {
-        name: any;
+octokit
+  .request("GET /users/{user}/repos", {
+    user: process.env.GIT_USERNAME,
+  })
+  .then(
+    (res: {
+      data: {
+        name: string;
         description: any;
         html_url: any;
         language: any;
         open_issues_count: any;
         stargazers_count: any;
         updated_at: string | number | Date;
-      }) => ({
+      }[];
+    }) => {
+      const repos = res.data.map((element) => ({
         name: element.name,
         description: element.description,
         url: element.html_url,
@@ -32,32 +34,29 @@ const getRepos = async () => {
         stars: element.stargazers_count,
         lastUpdate: new Date(element.updated_at).toDateString(),
         commits: 0,
-      })
-    );
-  } catch (e) {
-    return null;
-  }
-};
-const getCommits = async (repo: string) => {
-  try {
-    const commits = await octokit.request("GET /repos/{owner}/{repo}/commits", {
-      owner: process.env.GIT_USERNAME,
-      repo,
-    });
-    return commits.data.length;
-  } catch (e) {
-    return 0;
-  }
-};
-
-let repos = await getRepos();
-const result = ReposBlock(repos);
-
-const writeReadme = async () => {
-  try {
-    await writeFile("README.md", result);
-  } catch (e) {
-    console.log(e);
-  }
-};
-await writeReadme();
+      }));
+      let promises: Promise<IRepo>[] = [];
+      repos.forEach((repo) => {
+        promises.push(
+          octokit
+            .request("GET /repos/{owner}/{repo}/commits", {
+              owner: process.env.GIT_USERNAME,
+              repo: repo.name,
+            })
+            .then((data) => {
+              repo.commits = data.data.length;
+              return repo;
+            })
+            .catch((e) => repo)
+        );
+      });
+      Promise.all(promises)
+        .then((data) => {
+          writeFile("README.md", ReposBlock(data))
+            .then(() => console.log("Файл записан"))
+            .catch((e) => console.log(e));
+        })
+        .catch((e) => console.log(e));
+    }
+  )
+  .catch((e) => console.log(e));
