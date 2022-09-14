@@ -7,7 +7,7 @@ export default (
 ) => {
   const utilization = Math.floor((max / 100) * val);
   const line = Math.floor((utilization / 100) * size);
-  return `${done.repeat(line)}${utilization}%${empty.repeat(
+  return `${"```\n"}${done.repeat(line)} ${utilization}% ${empty.repeat(
     size - line - utilization.toString().length
-  )}`;
+  )}${"\n```"}`;
 };
