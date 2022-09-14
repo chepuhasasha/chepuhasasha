@@ -5,9 +5,10 @@ export default (
   done: string = "█",
   empty: string = "│"
 ) => {
-  const utilization = Math.floor((max / 100) * val);
+  const utilization = Math.floor((val / max) * 100);
   const line = Math.floor((utilization / 100) * size);
+  const emptyLine = size - line - utilization.toString().length;
   return `${"```\n"}${done.repeat(line)} ${utilization}% ${empty.repeat(
-    size - line - utilization.toString().length
+    emptyLine > 0 ? emptyLine : 1
   )}${"\n```"}`;
 };
