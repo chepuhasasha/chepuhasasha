@@ -5,8 +5,9 @@ export default (
   done: string = "█",
   empty: string = "│"
 ) => {
-  const utilization = (max / 100) * val;
+  const utilization = Math.floor((max / 100) * val);
   const line = Math.floor((utilization / 100) * size);
-  return `${utilization}% ${done.repeat(line)}${empty.repeat(size - line)}`;
-  // return done.repeat(size);
+  return `${done.repeat(line)}${utilization}%${empty.repeat(
+    size - line - utilization.toString().length
+  )}`;
 };
