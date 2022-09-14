@@ -61,7 +61,10 @@ octokit
       });
       Promise.all(promises)
         .then((data) => {
-          writeFile("README.md", ReposBlock(data))
+          writeFile(
+            "README.md",
+            ReposBlock(data.sort((a, b) => b.commits - a.commits))
+          )
             .then(() => console.log("Файл записан"))
             .catch((e) => console.log(e));
         })
