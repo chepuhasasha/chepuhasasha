@@ -51,6 +51,7 @@ octokit
             .request("GET /repos/{owner}/{repo}/commits", {
               owner: process.env.GIT_USERNAME,
               repo: repo.name,
+              per_page: 100,
             })
             .then((data) => {
               repo.commits = data.data.length;
