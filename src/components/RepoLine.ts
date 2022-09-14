@@ -3,11 +3,10 @@ import Utilization from "./Utilization.js";
 
 export default (repo: IRepo, size: number = 20) => {
   return `
->[${repo.name}](${repo.url})
->
->${Utilization(30, 100)}
-> ${"`"}commits: ${repo.commits}${"`"}
-> ${"`"}issues: ${repo.issues}${"`"}
-> ${"`"}stars: ${repo.stars}${"`"}
+  >${Utilization(30, 100)}
+  > ${"`"}commits: ${repo.commits}${"`"}
+  > ${"`"}issues: ${repo.issues}${"`"}
+  > ${"`"}stars: ${repo.stars}${"`"}
+  >[${repo.name}](${repo.url})
 `;
 };
