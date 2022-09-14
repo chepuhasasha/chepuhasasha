@@ -1,8 +1,7 @@
+import * as dotenv from "dotenv";
 import { writeFile } from "node:fs/promises";
 import { Octokit } from "octokit";
-import * as dotenv from "dotenv";
 import ReposBlock from "./components/ReposBlock.js";
-import { IRepo } from "./types/repo.interface";
 
 dotenv.config();
 
