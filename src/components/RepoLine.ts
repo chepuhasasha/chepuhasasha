@@ -8,9 +8,7 @@ export default (repo: IRepo, size: number = 20) => {
 >${Utilization(30, 100)}
 >
 > ${"`"}commits: ${repo.commits}${"`"}
->
 > ${"`"}issues: ${repo.issues}${"`"}
->
 > ${"`"}stars: ${repo.stars}${"`"}
 `;
 };
