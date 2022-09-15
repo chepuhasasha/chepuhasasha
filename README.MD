@@ -5,7 +5,8 @@
 ## frontend developer.
 
 ### statistics of languages ​​used
-![langs](./assets/langs.svg)
+![langs](http://localhost:3000/svg/languages_statistic/?user=chepuhasasha)
+![langs](http://localhost:3000/svg/repo/?name=muup)
 
 ---
 ### now I'm working on <!-- ACTIVE_REPO --> [muup]()

@@ -8,4 +8,5 @@ export interface ISVGController {
     res: Response,
     next: NextFunction
   ) => Promise<void>;
+  repo: (req: Request, res: Response, next: NextFunction) => Promise<void>;
 }

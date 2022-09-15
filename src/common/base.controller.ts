@@ -11,8 +11,8 @@ export abstract class BaseController {
     return this._router;
   }
 
-  public created(res: Response): void {
-    res.sendStatus(201);
+  public error(res: Response, message: string): void {
+    res.status(400).send(message);
   }
 
   public send<T>(res: Response, status: number, message: T): ExpressReturnType {
