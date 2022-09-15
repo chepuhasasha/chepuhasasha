@@ -1,6 +1,6 @@
 import { h } from "../utils/render.js";
-import LangsLine from "./LangsLine.js";
-import LangWidget from "./LangWidget.js";
+import LangsLine from "../components/LangsLine.js";
+import LangWidget from "../components/LangWidget.js";
 
 export default (
   langs: { name: string; percent: number }[],
