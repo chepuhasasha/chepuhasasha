@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "rootDir": "./src/",
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "ES2022",
-    "target": "ES2017",
-    "allowJs": true,
-    "skipLibCheck": true,
+    "target": "es2016",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
     "moduleResolution": "node",
-    "declaration": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true
+  }
 }
