@@ -37,6 +37,7 @@ octokit
           stars: element.stargazers_count,
           lastUpdate: new Date(element.updated_at).toDateString(),
           commits: 0,
+          commitsList: [],
         };
       });
 
@@ -50,8 +51,28 @@ octokit
         300
       );
       writeFile("./assets/langs.svg", result)
-        .then(() => console.log("Файл записан"))
+        .then(() => console.log("[Lang statistic]: OK!"))
+        .catch((e) => console.log("[Lang statistic]", e));
+
+      octokit.rest.repos
+        .listCommits({
+          owner: process.env.GIT_USERNAME,
+          repo: process.env.ACTIVE_REPO,
+          per_page: 5,
+        })
+        .then((data) => {
+          const activeRepo = repos.find(
+            (item) => item.name === process.env.ACTIVE_REPO
+          );
+          activeRepo.commitsList = data.data.map((d) => ({
+            message: d.commit.message,
+            url: d.html_url,
+            sha: d.sha,
+            date: new Date(d.commit.author.date).toDateString(),
+          }));
+          console.log(activeRepo);
+        })
         .catch((e) => console.log(e));
     }
   )
-  .catch((e) => console.log(e));
+  .catch((e) => console.log("[GET repos]", e));
