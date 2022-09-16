@@ -12,9 +12,9 @@ app.use(
     origin: "*",
   })
 );
-app.use("/svg", new SVGController().router);
+app.use("/", new SVGController().router);
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.send("<a href='https://github.com/chepuhasasha'>@chepuhasasha</a>");
 });
 

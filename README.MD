@@ -5,8 +5,7 @@
 ## frontend developer.
 
 ### statistics of languages ​​used
-![langs](https://chepuhasasha.herokuapp.com/svg/languages_statistic/?user=chepuhasasha)
-
+[![langs statistic](https://chepuhasasha.herokuapp.com/languages_statistic/?user=chepuhasasha&width=500&font_style=normal&font_size=12)](https://chepuhasasha.herokuapp.com)
 ---
 ### now I'm working on <!-- ACTIVE_REPO --> [muup]()
 
