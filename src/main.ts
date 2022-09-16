@@ -4,6 +4,7 @@ import cors from "cors";
 import { SVGController } from "./controllers/svg.controller";
 
 dotenv.config();
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(
@@ -17,6 +18,6 @@ app.get("/", (req, res) => {
   res.send("<a href='https://github.com/chepuhasasha'>@chepuhasasha</a>");
 });
 
-app.listen(process.env.API_PORT, () => {
-  console.log(`Listening on port: ${process.env.API_PORT}`);
+app.listen(port, () => {
+  console.log(`Listening on port: ${port}`);
 });
