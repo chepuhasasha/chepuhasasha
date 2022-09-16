@@ -56,10 +56,16 @@ export class SVGController extends BaseController implements ISVGController {
             Object.keys(langs)
               .map((key) => ({
                 name: key,
-                percent: Math.floor((langs[key] / sum) * 100),
+                percent: (langs[key] / sum) * 100,
               }))
               .sort((a, b) => b.percent - a.percent),
-            300
+            {
+              width: req.query.width ? +req.query.width : 300,
+              fontStyle: req.query.font_style
+                ? req.query.font_style.toString()
+                : "normal",
+              fontSize: req.query.font_size ? +req.query.font_size : 12,
+            }
           ),
           "utf-8"
         );

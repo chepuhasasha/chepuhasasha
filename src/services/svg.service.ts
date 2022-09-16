@@ -57,49 +57,77 @@ export default class SVGService {
     ]);
   }
 
-  lang(x: number, y: number, name: string, percent?: number) {
+  lang(
+    x: number,
+    y: number,
+    name: string,
+    width: number = 200,
+    height: number = 13,
+    percent?: number
+  ) {
     return this.h("g", {}, [
       this.h("circle", {
         cx: `${x + 4}`,
-        cy: `${y - 4 + 15}`,
+        cy: `${y + 2 + height / 2}`,
         r: "4",
         fill: this.langColors(name),
       }),
       this.h(
         "text",
-        { x: `${x + 16}`, y: `${y + 15}`, fill: "#C9D1D9", class: "text" },
+        { x: `${x + 16}`, y: `${y + height}`, fill: "#C9D1D9", class: "text" },
         [name]
       ),
       percent
         ? this.h(
             "text",
             {
-              x: `${x + 20 + name.length * 7}`,
-              y: `${y + 15}`,
+              x: `${
+                x +
+                (width -
+                  (Math.floor(percent) + "%").length * ((height - 4) / 2))
+              }`,
+              y: `${y + height}`,
               fill: "#8B949E",
-              class: "text",
+              class: "text_percent",
             },
-            [`${percent}%`]
+            [`${Math.floor(percent)}%`]
           )
         : "",
     ]);
   }
 
-  langsSVG(langs: { name: string; percent: number }[], width: number = 200) {
+  langsSVG(
+    langs: { name: string; percent: number }[],
+    options: { width: number; fontStyle: string; fontSize: number }
+  ) {
     return this.h(
       "svg",
       {
         xmlns: "http://www.w3.org/2000/svg",
-        viewBox: `0 0 ${width} ${langs.length * 25 + 23}`,
-        width: `${width}`,
-        height: `${langs.length * 25 + 23}`,
+        viewBox: `0 0 ${options.width} ${
+          langs.length * (options.fontSize + 11) + 23
+        }`,
+        width: `${options.width}`,
+        height: `${langs.length * (options.fontSize + 11) + 23}`,
         style: "background: #0D1117; border-radius: 6px;",
       },
       [
-        this.h("style", {}, [".text { font: normal 12px monospace; }"]),
-        this.linePie(10, 10, width - 20, langs),
+        this.h("style", {}, [
+          `
+          .text { font: ${options.fontStyle} ${options.fontSize}px sans-serif; }
+          .text_percent { font: ${options.fontStyle} ${options.fontSize}px monospace; }
+          `,
+        ]),
+        this.linePie(10, 10, options.width - 20, langs),
         langs.reduce((accum, lang, i) => {
-          return (accum += this.lang(10, 26 + i * 23, lang.name, lang.percent));
+          return (accum += this.lang(
+            10,
+            26 + i * (options.fontSize + 10),
+            lang.name,
+            options.width - 30,
+            options.fontSize,
+            lang.percent
+          ));
         }, ""),
       ]
     );
