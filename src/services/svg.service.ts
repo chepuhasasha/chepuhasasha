@@ -7,6 +7,10 @@ export default class SVGService {
       JavaScript: "#f1e05a",
       Pyrhon: "#3572A5",
       "Jupyter Notebook": "#DA5B0B",
+      HTML: "#e34c26",
+      PowerShell: "#012456",
+      Shell: "#89e051",
+      Go: "#00ADD8",
       default: "#58A6FF",
     };
     return colors[name] ? colors[name] : colors.default;
@@ -70,7 +74,7 @@ export default class SVGService {
         ? this.h(
             "text",
             {
-              x: `${x + 32 + name.length * 5}`,
+              x: `${x + 20 + name.length * 7}`,
               y: `${y + 15}`,
               fill: "#8B949E",
               class: "text",
@@ -92,7 +96,7 @@ export default class SVGService {
         style: "background: #0D1117; border-radius: 6px;",
       },
       [
-        this.h("style", {}, [".text { font: normal 12px sans-serif; }"]),
+        this.h("style", {}, [".text { font: normal 12px monospace; }"]),
         this.linePie(10, 10, width - 20, langs),
         langs.reduce((accum, lang, i) => {
           return (accum += this.lang(10, 26 + i * 23, lang.name, lang.percent));

@@ -42,10 +42,12 @@ export class SVGController extends BaseController implements ISVGController {
         const langs: Record<string, number> = {};
         const sum = gh_res.data.reduce(
           (accum: number, element: { language: string }) => {
-            if (langs[element.language] === undefined)
-              langs[element.language] = 0;
-            if (langs[element.language] >= 0) langs[element.language] += 1;
-            return (accum += 1);
+            if (element.language != null) {
+              if (langs[element.language] === undefined)
+                langs[element.language] = 0;
+              if (langs[element.language] >= 0) langs[element.language] += 1;
+              return (accum += 1);
+            } else return accum;
           },
           0
         );
