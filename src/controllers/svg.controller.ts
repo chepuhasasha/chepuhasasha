@@ -48,6 +48,28 @@ export class SVGController extends BaseController implements ISVGController {
   }
 
   async repo(req: Request, res: Response, next: NextFunction) {
-    this.ok(res, req.query);
+    this.octokit
+      .request("GET /users/{user}/repos", {
+        user: req.query.user ? req.query.user : "chepuhasasha",
+      })
+      .then((gh_res) => {
+        const repo = gh_res.data.find(
+          (item: { name: string }) => item.name === req.query.name
+        );
+        if (repo) {
+          this.svg(
+            res,
+            this.svgService.getRepo({
+              name: repo.name,
+              description: repo.description,
+              language: repo.language,
+            })
+          );
+          // this.ok(res, repo);
+        } else {
+          this.error(res, "Repo not found");
+        }
+      })
+      .catch((e) => this.error(res, e));
   }
 }

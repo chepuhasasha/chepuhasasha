@@ -1,4 +1,5 @@
 import LangsStat from "../svg/components/langsStat.component";
+import Repo from "../svg/components/repo.component";
 import { Request } from "express";
 export default class SVGService {
   getLangsStatistic(data: { language: string }[], query: Request["query"]) {
@@ -26,5 +27,8 @@ export default class SVGService {
       ),
       "utf-8"
     );
+  }
+  getRepo(repo: { name: string; description: string; language: string }) {
+    return Buffer.from(Repo(repo, { width: 300, height: 294 }), "utf-8");
   }
 }

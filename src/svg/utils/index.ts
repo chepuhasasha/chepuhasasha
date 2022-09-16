@@ -1,5 +1,5 @@
 export const h = (
-  tag: keyof SVGElementTagNameMap,
+  tag: keyof SVGElementTagNameMap | "div",
   attrs?: Record<string, string>,
   childs?: string[]
 ): string => {

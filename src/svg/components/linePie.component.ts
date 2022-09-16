@@ -16,6 +16,7 @@ export default (
         width: "0",
         height: "8",
         fill: color(lang.name),
+        rx: "2",
       };
       _width += lineWidth + 2;
       return (accum += h("rect", rect, [

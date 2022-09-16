@@ -15,7 +15,6 @@ export default (
       }`,
       width: `${options.width}`,
       height: `${langs.length * (options.fontSize + 11) + 23}`,
-      style: "background: #0D1117; border-radius: 6px;",
     },
     [
       h("style", {}, [
@@ -24,6 +23,16 @@ export default (
           .text_percent { font: ${options.fontStyle} ${options.fontSize}px monospace; }
           `,
       ]),
+      h("rect", {
+        x: "0",
+        y: "0",
+        width: `${options.width}`,
+        height: `${langs.length * (options.fontSize + 11) + 23}`,
+        rx: "6",
+        fill: "#0D1117",
+        stroke: "#30363D",
+        "stroke-width": "1",
+      }),
       LinePie(10, 10, options.width - 20, langs),
       langs.reduce((accum, lang, i) => {
         return (accum += Lang(
