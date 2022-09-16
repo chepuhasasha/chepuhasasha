@@ -28,7 +28,12 @@ export default class SVGService {
       "utf-8"
     );
   }
-  getRepo(repo: { name: string; description: string; language: string }) {
+  getRepo(repo: {
+    name: string;
+    description: string;
+    language: string;
+    commits: { message: string; username: string; date: string }[];
+  }) {
     return Buffer.from(Repo(repo, { width: 300, height: 294 }), "utf-8");
   }
 }

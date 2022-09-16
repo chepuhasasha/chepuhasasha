@@ -57,15 +57,27 @@ export class SVGController extends BaseController implements ISVGController {
           (item: { name: string }) => item.name === req.query.name
         );
         if (repo) {
-          this.svg(
-            res,
-            this.svgService.getRepo({
-              name: repo.name,
-              description: repo.description,
-              language: repo.language,
+          this.octokit.rest.repos
+            .listCommits({
+              owner: repo.owner.login,
+              repo: repo.name,
+              per_page: 3,
             })
-          );
-          // this.ok(res, repo);
+            .then((commits) => {
+              this.svg(
+                res,
+                this.svgService.getRepo({
+                  name: repo.name,
+                  description: repo.description,
+                  language: repo.language,
+                  commits: commits.data.map((commit) => ({
+                    message: commit.commit.message,
+                    username: commit.author?.login as string,
+                    date: commit.commit.author?.date as string,
+                  })),
+                })
+              );
+            });
         } else {
           this.error(res, "Repo not found");
         }

@@ -3,7 +3,12 @@ import Lang from "./lang.component";
 import Commit from "./commit.component";
 
 export default (
-  repo: { name: string; description: string; language: string },
+  repo: {
+    name: string;
+    description: string;
+    language: string;
+    commits: { message: string; username: string; date: string }[];
+  },
   options: { width: number; height: number }
 ) => {
   return h(
@@ -53,31 +58,18 @@ export default (
           ),
         ]
       ),
-      Commit(
-        10,
-        90,
-        "+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "chepuhasasha",
-        "20.20.20",
-        options.width - 20
-      ),
-      Commit(
-        10,
-        158,
-        "+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "chepuhasasha",
-        "20.20.20",
-        options.width - 20
-      ),
-      Commit(
-        10,
-        226,
-        "+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "chepuhasasha",
-        "20.20.20",
-        options.width - 20
-      ),
-      // h("text", {}, [repo.discription]),
+      repo.commits.reduce((accum, commit, i) => {
+        return (accum += Commit(
+          10,
+          90 + i * 68,
+          commit.message,
+          commit.username,
+          `${new Date(commit.date).toLocaleTimeString()} ${new Date(
+            commit.date
+          ).toDateString()}`,
+          options.width - 20
+        ));
+      }, ""),
     ]
   );
 };
