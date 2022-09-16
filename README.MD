@@ -10,5 +10,4 @@
 #### now I'm working on <!-- ACTIVE_REPO -->
 
 [![active repo](https://chepuhasasha.herokuapp.com/repo/?name=muup&user=chepuhasasha)](https://github.com/chepuhasasha/muup)
-[![active repo](https://chepuhasasha.herokuapp.com/repo/?name=ois&user=chepuhasasha)](https://github.com/chepuhasasha/ois)
 [![active repo](https://chepuhasasha.herokuapp.com/repo/?name=chepuhasasha&user=chepuhasasha)](https://github.com/chepuhasasha/chepuhasasha)
