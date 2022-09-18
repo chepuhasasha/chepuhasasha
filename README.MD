@@ -1,7 +1,9 @@
 
 # <img src="./assets/Hi.gif" height='32'/> Hello! I`m Sergey
 
-[![langs statistic](https://chepuhasasha.herokuapp.com/languages_statistic/?user=chepuhasasha&width=900&font_style=normal&font_size=12)](https://chepuhasasha.herokuapp.com)
+<a href="https://chepuhasasha.herokuapp.com">
+  <img alt="langs" src="https://chepuhasasha.herokuapp.com/languages_statistic/?user=chepuhasasha&width=800&font_style=normal&font_size=12"/>
+</a>
 
 > frontend developer.
 
@@ -11,5 +13,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 #### now I'm working on <!-- ACTIVE_REPO -->
 
-[![active repo](https://chepuhasasha.herokuapp.com/repo/?name=muup&user=chepuhasasha)](https://github.com/chepuhasasha/muup)
-[![active repo](https://chepuhasasha.herokuapp.com/repo/?name=chepuhasasha&user=chepuhasasha)](https://github.com/chepuhasasha/chepuhasasha)
+<a href="https://github.com/chepuhasasha/muup">
+  <img alt="muup" src="https://chepuhasasha.herokuapp.com/repo/?name=muup&user=chepuhasasha&width=300"/>
+</a>
+<a href="https://github.com/chepuhasasha/chepuhasasha">
+  <img alt="muup" src="https://chepuhasasha.herokuapp.com/repo/?name=chepuhasasha&user=chepuhasasha&width=300"/>
+</a>
