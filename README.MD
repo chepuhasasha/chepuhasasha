@@ -2,7 +2,7 @@
 # <img src="./assets/Hi.gif" height='32'/> Hello! I`m Sergey
 
 <a href="https://chepuhasasha.herokuapp.com">
-  <img alt="langs" src="https://chepuhasasha.herokuapp.com/languages_statistic/?user=chepuhasasha&width=800&font_style=normal&font_size=12"/>
+  <img alt="langs" src="https://chepuhasasha.herokuapp.com/languages_statistic/?user=chepuhasasha&width=900&font_style=normal&font_size=12"/>
 </a>
 
 > frontend developer.
