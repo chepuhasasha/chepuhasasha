@@ -12,6 +12,10 @@ app.use(
     origin: "*",
   })
 );
+app.use((req, res, next) => {
+  res.set("Cache-control", "no-cache");
+  next();
+});
 app.use("/", new SVGController().router);
 
 app.get("*", (req, res) => {
