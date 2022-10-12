@@ -22,8 +22,8 @@
 
 #### now I'm working on <!-- ACTIVE_REPO -->
 
-<a href="https://github.com/chepuhasasha/muup">
-  <img alt="muup" src="https://chepuhasasha.herokuapp.com/repo/?name=muup&user=chepuhasasha&width=300"/>
+<a href="https://github.com/chepuhasasha/qtb">
+  <img alt="muup" src="https://chepuhasasha.herokuapp.com/repo/?name=qtb&user=chepuhasasha&width=300"/>
 </a>
 <a href="https://github.com/chepuhasasha/chepuhasasha">
   <img alt="muup" src="https://chepuhasasha.herokuapp.com/repo/?name=chepuhasasha&user=chepuhasasha&width=300"/>
